@@ -16,7 +16,7 @@ import AppKit
 import UIKit
 #endif
 
-final class TextLayer: CALayer {
+final public class TextLayer: CALayer {
   
   public var text: String? {
     didSet {
@@ -105,7 +105,7 @@ final class TextLayer: CALayer {
     self.setNeedsDisplay()
   }
   
-  override func action(forKey event: String) -> CAAction? {
+    public override func action(forKey event: String) -> CAAction? {
     return nil
   }
   
@@ -142,7 +142,7 @@ final class TextLayer: CALayer {
     }
   }
   
-  override func draw(in ctx: CGContext) {
+    public override func draw(in ctx: CGContext) {
     guard let attributedString = attributedString else { return }
     updateTextContent()
     guard fillFrameSetter != nil || strokeFrameSetter != nil else { return }
