@@ -59,6 +59,7 @@ final public class AnimatedButton: AnimatedControl {
     } else {
       touchEvent = UIControl.Event.touchUpOutside
     }
+    print("Hello This is just a change")
     
     if let playrange = rangesForEvents[touchEvent.rawValue] {
       animationView.play(fromProgress: playrange.from, toProgress: playrange.to, loopMode: LottieLoopMode.playOnce)
